@@ -27,7 +27,9 @@
     "url": "https://github.com/poppiestar/online-ordering/issues"
   },
   "homepage": "https://github.com/poppiestar/online-ordering#readme",
-  "dependencies": {},
+  "dependencies": {
+    "hapi": "^16.5.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
