@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index",
     "lint": "eslint *.js",
+    "flow": "flow",
     "test": "lab"
   },
   "repository": {
@@ -35,6 +36,7 @@
     "babel-preset-react": "^6.24.1",
     "eslint": "^4.3.0",
     "eslint-plugin-react": "^7.1.0",
+    "flow-bin": "^0.51.1",
     "webpack": "^3.4.1"
   }
 }
