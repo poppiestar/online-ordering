@@ -32,6 +32,7 @@
     "hapi": "^16.5.0",
     "inert": "^4.2.1",
     "marko": "^4.4.21",
+    "random-sentence": "^1.0.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
