@@ -7,6 +7,10 @@
         <main id="main">
             $!{input.react}
         </main>
+        <script>
+            // initial redux state from server
+            window.__INITIAL_STATE__ = ${input.state};
+        </script>
         <script src="/bundle.js"></script>
     </body>
 </html>

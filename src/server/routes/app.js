@@ -2,20 +2,26 @@
 
 require('marko/node-require');
 
-import App from '../../components/App';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+
+import AppContainer from '../../components/AppContainer';
+import onlineOrderingApp from '../../reducers';
 
 const indexTemplate = require('../templates/index');
 
-const greeting = "Obligatory Hello World";
+let store = createStore(onlineOrderingApp);
 
 const AppHandler = (request, reply) => {
     const output = ReactDOMServer.renderToString(
-        <App greeting={ greeting } />
+        <Provider store={store}>
+            <AppContainer />
+        </Provider>
     );
 
-    return reply(indexTemplate.stream({ react: output })).type('text/html');
+    return reply(indexTemplate.stream({ react: output, state: JSON.stringify(store.getState()) })).type('text/html');
 };
 
 export default AppHandler;
