@@ -10,17 +10,32 @@ server.connection({
     host: 'localhost'
 });
 
-server.route({
-    method: 'GET',
-    path: '/',
-    handler: RootHandler
-});
-
-server.start((err) => {
+server.register(require('inert'), (err) => {
 
     if (err) {
         throw err;
     }
 
-    console.log(`Server running at: ${server.info.uri}`); // eslint-disable-line no-console
+    server.route({
+        method: 'GET',
+        path: '/',
+        handler: RootHandler
+    });
+
+    server.route({
+        method: 'GET',
+        path: '/bundle.js',
+        handler: (request, reply) => {
+            reply.file('./build/bundle.js');
+        }
+    });
+
+    server.start((err) => {
+
+        if (err) {
+            throw err;
+        }
+
+        console.log(`Server running at: ${server.info.uri}`); // eslint-disable-line no-console
+    });
 });

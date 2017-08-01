@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
+    "build": "webpack",
     "lint": "eslint *.js",
     "flow": "flow",
     "test": "lab"
@@ -29,6 +30,7 @@
   "homepage": "https://github.com/poppiestar/online-ordering#readme",
   "dependencies": {
     "hapi": "^16.5.0",
+    "inert": "^4.2.1",
     "marko": "^4.4.21",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
