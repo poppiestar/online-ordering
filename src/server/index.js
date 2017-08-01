@@ -1,3 +1,4 @@
+/* eslint-env node */
 
 import { Server } from 'hapi';
 import RootHandler from './routes/app';
@@ -21,5 +22,5 @@ server.start((err) => {
         throw err;
     }
 
-    console.log(`Server running at: ${server.info.uri}`);
+    console.log(`Server running at: ${server.info.uri}`); // eslint-disable-line no-console
 });
