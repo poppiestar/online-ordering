@@ -1,1 +1,3 @@
-console.log('coming soon');
+
+require('babel-register');
+require('./server');
