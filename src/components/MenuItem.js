@@ -1,16 +1,17 @@
 // @flow
 
+import React from 'react';
+
 type Props = {
     id: string,
     name: string,
-    price: number
+    price: number,
+    addItemToMenu: (id: string) => any
 };
 
-import React from 'react';
-
-const MenuItem = ({ id, name, price }: Props) =>
+const MenuItem = ({ id, name, price, addItemToMenu }: Props) =>
     <li>
-        <input type="checkbox" name={id} />
+        <input onChange={() => addItemToMenu(id) } type="checkbox" name={id} />
         <span className="name">{ name }</span>
         <span className="price">{ price }</span>
     </li>;

@@ -45,4 +45,15 @@ suite('MenuItem component', () => {
         expect(parseFloat(element.text())).to.equal(props.price);
         done();
     });
+    
+    test("should fire the action to add the menu item to state", (done) => {
+        const addItemToMenuSpy = sinon.spy();
+        const wrapper = shallow(<MenuItem addItemToMenu={addItemToMenuSpy} id={props.id} name={props.name} price={props.price} />);
+
+        wrapper.find('input').simulate('change');
+
+        expect(addItemToMenuSpy.callCount).to.equal(1);
+        expect(addItemToMenuSpy.calledWith(props.id)).to.equal(true);
+        done();
+    });
 });
