@@ -2,6 +2,7 @@
 
 import { Server } from 'hapi';
 import RootHandler from './routes/app';
+import MenuHandler from './routes/menu';
 
 const server = new Server();
 
@@ -30,6 +31,12 @@ server.register(require('inert'), (err) => {
         }
     });
 
+    server.route({
+        method: 'GET',
+        path: '/api/menu/{id}',
+        handler: MenuHandler
+    });
+    
     server.start((err) => {
 
         if (err) {
