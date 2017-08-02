@@ -34,4 +34,11 @@ suite('Cuisine Selector component', () => {
         expect(wrapper.find('select').length).to.equal(1);
         done();
     });
+
+    test("should list each cuisine types as an option element", (done) => {
+        const wrapper = shallow(<CuisineSelector options={props.options} />);
+        
+        expect(wrapper.find('select option').length).to.equal(6);
+        done();
+    });
 });
