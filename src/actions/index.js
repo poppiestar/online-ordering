@@ -38,3 +38,8 @@ export const addMenu = (id, data) => ({
     id,
     data
 });
+
+export const addItemToOrder = (id) => ({
+    type: 'ADD_ITEM_TO_ORDER',
+    id
+});
