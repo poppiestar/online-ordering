@@ -4,7 +4,8 @@
   "description": "A sample React app for an online takeaway ordering system",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --config nodemon.json index.js",
+    "run": "nodemon --config nodemon.json index.js",
+    "start": "npm-run-all --parallel build run",
     "test": "lab src/test/.setup.js src/test/**/*-test.js --leaks",
     "build": "webpack-dev-server --progress --colors --inline --hot",
     "lint": "eslint *.js",
@@ -58,6 +59,7 @@
     "flow-bin": "^0.51.1",
     "jsdom": "^11.1.0",
     "lab": "^14.1.1",
+    "npm-run-all": "^4.0.2",
     "react-test-renderer": "^15.6.1",
     "sinon": "^2.4.1",
     "webpack": "^3.4.1",
