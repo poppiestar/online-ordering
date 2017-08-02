@@ -3,13 +3,14 @@
 import React from 'react';
 
 type Props = {
-    options: Array<{ id: number, name: string }>
+    options: Array<{ id: number, name: string }>,
+    selectCuisine: () => any
 };
 
-const CuisineSelector = ({ options }: Props) =>
+const CuisineSelector = ({ options, selectCuisine }: Props) =>
     <div>
         <h1>What taste sensation are you after tonight?</h1>
-        <select>
+        <select onChange={selectCuisine}>
             <option>Select cuisine:</option>
             {
                 options.map(option =>
