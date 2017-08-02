@@ -4,7 +4,7 @@
   "description": "A sample React app for an online takeaway ordering system",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
+    "start": "nodemon --config nodemon.json index.js",
     "test": "lab src/test/.setup.js src/test/**/*-test.js --leaks",
     "build": "webpack",
     "lint": "eslint *.js",
@@ -32,6 +32,7 @@
     "hapi": "^16.5.0",
     "inert": "^4.2.1",
     "marko": "^4.4.21",
+    "nodemon": "^1.11.0",
     "random-sentence": "^1.0.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
