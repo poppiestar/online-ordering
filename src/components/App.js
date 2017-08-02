@@ -1,10 +1,10 @@
 
 import React from 'react';
+import CuisineSelectorContainer from './CuisineSelectorContainer';
 
-const App = ({ greeting, generateGreeting }) =>
+const App = () =>
     <div>
-        <h1>{ greeting }</h1>
-        <button onClick={generateGreeting}>Generate new greeting</button>
+        <CuisineSelectorContainer />
     </div>;
     
 export default App;

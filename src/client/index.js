@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-import AppContainer from '../components/AppContainer';
+import App from '../components/App';
 import onlineOrderingApp from '../reducers';
 
 const preloadedState = window.__INITIAL_STATE__;
@@ -19,7 +19,7 @@ let store = createStore(
 
 ReactDOM.render(
     <Provider store={store}>
-        <AppContainer />
+        <App />
     </Provider>,
     document.getElementById('main')
 );

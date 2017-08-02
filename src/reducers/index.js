@@ -2,10 +2,10 @@
 
 import { combineReducers } from 'redux';
 
-import greeting from './greeting';
+import cuisines from './cuisines';
 
 const onlineOrderingApp = combineReducers({
-    greeting
+    cuisines
 });
 
 export default onlineOrderingApp;

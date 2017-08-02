@@ -7,7 +7,7 @@ import ReactDOMServer from 'react-dom/server';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import AppContainer from '../../components/AppContainer';
+import App from '../../components/App';
 import onlineOrderingApp from '../../reducers';
 
 const indexTemplate = require('../templates/index');
@@ -17,7 +17,7 @@ let store = createStore(onlineOrderingApp);
 const AppHandler = (request, reply) => {
     const output = ReactDOMServer.renderToString(
         <Provider store={store}>
-            <AppContainer />
+            <App />
         </Provider>
     );
 
