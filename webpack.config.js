@@ -1,14 +1,24 @@
 /* eslint-env node */
 
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
     entry: ['./src/client/index.js'],
 
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'build')
+        path: path.resolve(__dirname, 'build'),
+        publicPath: 'http://localhost:8080/'
     },
+
+    devServer: {
+        headers: {
+            'Access-Control-Allow-Origin': '*'
+        }
+    },
+
+    plugins: [new webpack.NamedModulesPlugin()],
 
     module: {
         loaders: [

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon --config nodemon.json index.js",
     "test": "lab src/test/.setup.js src/test/**/*-test.js --leaks",
-    "build": "webpack",
+    "build": "webpack-dev-server --progress --colors --inline --hot",
     "lint": "eslint *.js",
     "flow": "flow"
   },
@@ -55,6 +55,7 @@
     "jsdom": "^11.1.0",
     "lab": "^14.1.1",
     "react-test-renderer": "^15.6.1",
-    "webpack": "^3.4.1"
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1"
   }
 }
