@@ -6,14 +6,19 @@ export const setCuisine = (id) => ({
 
 export const selectCuisine = (id) =>
     (dispatch, getState) => {
-        dispatch(setCuisine(id));
-
         const { menus } = getState();
         
         if (!menus[id]) {
             // call for this menu
             console.log('menu does not exist');
+            dispatch(setCuisine(id));
         } else {
-            console.log('menu does exist');
+            dispatch(setCuisine(id));
         }
     };
+
+export const addMenu = (id, data) => ({
+    type: 'ADD_MENU',
+    id,
+    data
+});
