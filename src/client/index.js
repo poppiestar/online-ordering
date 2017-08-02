@@ -3,7 +3,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 
 import App from '../components/App';
 import onlineOrderingApp from '../reducers';
@@ -14,6 +15,7 @@ delete window.__INITIAL_STATE__;
 let store = createStore(
     onlineOrderingApp,
     preloadedState,
+    applyMiddleware(thunk),
     window.devToolsExtension && window.devToolsExtension()
 );
 
