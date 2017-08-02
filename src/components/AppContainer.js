@@ -14,9 +14,9 @@ const mapDispatchToProps = (dispatch) => ({
     }
 });
 
-const VisibleYouKnow = connect(
+const AppContainer = connect(
     mapStateToProps,
     mapDispatchToProps
 )(App);
 
-export default VisibleYouKnow;
+export default AppContainer;
