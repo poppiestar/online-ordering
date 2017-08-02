@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
 import App from '../components/App';
@@ -15,8 +16,9 @@ delete window.__INITIAL_STATE__;
 let store = createStore(
     onlineOrderingApp,
     preloadedState,
-    applyMiddleware(thunk),
-    window.devToolsExtension && window.devToolsExtension()
+    composeWithDevTools(
+        applyMiddleware(thunk)
+    )
 );
 
 ReactDOM.render(

@@ -29,14 +29,18 @@
   },
   "homepage": "https://github.com/poppiestar/online-ordering#readme",
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "es6-promise": "^4.1.1",
     "hapi": "^16.5.0",
     "inert": "^4.2.1",
+    "isomorphic-fetch": "^2.2.1",
     "marko": "^4.4.21",
     "nodemon": "^1.11.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
     "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
