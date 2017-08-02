@@ -1,6 +1,6 @@
 
 import { connect } from 'react-redux';
-
+import { selectCuisine } from '../actions';
 import CuisineSelector from './CuisineSelector';
 
 const mapStateToProps = ({ cuisines }) => ({
@@ -9,7 +9,7 @@ const mapStateToProps = ({ cuisines }) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     selectCuisine: (e) => {
-        console.log('have selected something: ', e.currentTarget.value);
+        dispatch(selectCuisine(parseInt(e.currentTarget.value)));
     }
 });
 
