@@ -9,13 +9,16 @@ type Props = {
     addItemToMenu: () => any
 };
 
-const Menu = ({ items, addItemToMenu }: Props) =>
-    <ul className="menu">
-        {
-            items.map((item, i) =>
-                <MenuItem key={i} addItemToMenu={addItemToMenu} id={item.id} name={item.name} price={item.price} />
-            )
-        }
-    </ul>;
+const Menu = ({ items, addItemToMenu }: Props) => {
+    return items ? 
+        <ul className="menu">
+            {
+                items.map((item, i) =>
+                    <MenuItem key={i} addItemToMenu={addItemToMenu} id={item.id} name={item.name} price={item.price} />
+                )
+            }
+        </ul> :
+        null;
+};
     
 export default Menu;

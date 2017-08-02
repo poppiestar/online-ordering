@@ -29,6 +29,14 @@ suite('MenuItem component', () => {
         done();
     });
 
+    test("should render nothing if no items are passed", (done) => {
+        const wrapper = shallow(<Menu items={null} />);
+        const element = wrapper.find('ul.menu');
+
+        expect(element.length).to.equal(0);
+        done();
+    });
+
     test("should show a menu item for each item in the list", (done) => {
         const wrapper = shallow(<Menu items={props.items} />);
         const elements = wrapper.find(MenuItem);
