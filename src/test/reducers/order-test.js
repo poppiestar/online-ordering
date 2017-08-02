@@ -4,7 +4,7 @@ import Lab from 'lab';
 import { expect } from 'code';
 
 import orderReducer from '../../reducers/order';
-import { setCuisine } from '../../actions';
+import { setCuisine, addItemToOrder } from '../../actions';
 
 const lab = exports.lab = Lab.script();
 const { suite, test } = lab;
@@ -20,4 +20,16 @@ suite('order reducer', () => {
         expect(result).to.equal(expected);
         done();
     });
+
+    test("should add an item to cuisine", (done) => {
+        const itemId = 'P:SIZ';
+        const result = orderReducer({ order: [] }, addItemToOrder(itemId));
+        const expected = {
+            order: [itemId]
+        };
+
+        expect(result).to.equal(expected);
+        done();
+    });
+
 });
