@@ -1,6 +1,6 @@
 
 import { connect } from 'react-redux';
-import { addItemToMenu } from '../actions';
+import { addItemToOrder } from '../actions';
 import Menu from './Menu';
 
 const mapStateToProps = ({ menus, order }) => ({
@@ -8,8 +8,8 @@ const mapStateToProps = ({ menus, order }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    addItemToMenu: (id) => {
-        dispatch(addItemToMenu(id));
+    addItemToOrder: (id) => {
+        dispatch(addItemToOrder(id));
     }
 });
 
